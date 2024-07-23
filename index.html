@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>YouTube Clone</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link
+      rel="icon"
+      type="image-x/icon"
+      href="https://www.youtube.com/s/desktop/060ac52e/img/favicon_96x96.png"
+    />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar">
+        <div class="menu-logo">
+          <div class="menu-icon icon">
+            <img
+              src="https://fonts.gstatic.com/s/i/youtube_outline/bars_3/v2/24px.svg"
+              alt="Menu Icon"
+            />
+          </div>
+          <div class="logo">
+            <img
+              src="data:image/svg+xml,%3Csvg%20id%3D%22yt-logo-updated_yt2%22%20viewBox%3D%220%200%2090%2020%22%20preserveAspectRatio%3D%22xMidYMid%20meet%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M27.9727%203.12324C27.6435%201.89323%2026.6768%200.926623%2025.4468%200.597366C23.2197%202.24288e-07%2014.285%200%2014.285%200C14.285%200%205.35042%202.24288e-07%203.12323%200.597366C1.89323%200.926623%200.926623%201.89323%200.597366%203.12324C2.24288e-07%205.35042%200%2010%200%2010C0%2010%202.24288e-07%2014.6496%200.597366%2016.8768C0.926623%2018.1068%201.89323%2019.0734%203.12323%2019.4026C5.35042%2020%2014.285%2020%2014.285%2020C14.285%2020%2023.2197%2020%2025.4468%2019.4026C26.6768%2019.0734%2027.6435%2018.1068%2027.9727%2016.8768C28.5701%2014.6496%2028.5701%2010%2028.5701%2010C28.5701%2010%2028.5677%205.35042%2027.9727%203.12324Z%22%20fill%3D%22%23FF0000%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%3Cpath%20d%3D%22M11.4253%2014.2854L18.8477%2010.0004L11.4253%205.71533V14.2854Z%22%20fill%3D%22white%22%3E%3C%2Fpath%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3Cg%3E%0A%20%20%20%20%20%20%3Cg%20id%3D%22youtube-paths_yt2%22%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M34.6024%2013.0036L31.3945%201.41846H34.1932L35.3174%206.6701C35.6043%207.96361%2035.8136%209.06662%2035.95%209.97913H36.0323C36.1264%209.32532%2036.3381%208.22937%2036.665%206.68892L37.8291%201.41846H40.6278L37.3799%2013.0036V18.561H34.6001V13.0036H34.6024Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M41.4697%2018.1937C40.9053%2017.8127%2040.5031%2017.22%2040.2632%2016.4157C40.0257%2015.6114%2039.9058%2014.5437%2039.9058%2013.2078V11.3898C39.9058%2010.0422%2040.0422%208.95805%2040.315%208.14196C40.5878%207.32588%2041.0135%206.72851%2041.592%206.35457C42.1706%205.98063%2042.9302%205.79248%2043.871%205.79248C44.7976%205.79248%2045.5384%205.98298%2046.0981%206.36398C46.6555%206.74497%2047.0647%207.34234%2047.3234%208.15137C47.5821%208.96275%2047.7115%2010.0422%2047.7115%2011.3898V13.2078C47.7115%2014.5437%2047.5845%2015.6161%2047.3329%2016.4251C47.0812%2017.2365%2046.672%2017.8292%2046.1075%2018.2031C45.5431%2018.5771%2044.7764%2018.7652%2043.8098%2018.7652C42.8126%2018.7675%2042.0342%2018.5747%2041.4697%2018.1937ZM44.6353%2016.2323C44.7905%2015.8231%2044.8705%2015.1575%2044.8705%2014.2309V10.3292C44.8705%209.43077%2044.7929%208.77225%2044.6353%208.35833C44.4777%207.94206%2044.2026%207.7351%2043.8074%207.7351C43.4265%207.7351%2043.156%207.94206%2043.0008%208.35833C42.8432%208.77461%2042.7656%209.43077%2042.7656%2010.3292V14.2309C42.7656%2015.1575%2042.8408%2015.8254%2042.9914%2016.2323C43.1419%2016.6415%2043.4123%2016.8461%2043.8074%2016.8461C44.2026%2016.8461%2044.4777%2016.6415%2044.6353%2016.2323Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M56.8154%2018.5634H54.6094L54.3648%2017.03H54.3037C53.7039%2018.1871%2052.8055%2018.7656%2051.6061%2018.7656C50.7759%2018.7656%2050.1621%2018.4928%2049.767%2017.9496C49.3719%2017.4039%2049.1743%2016.5526%2049.1743%2015.3955V6.03751H51.9942V15.2308C51.9942%2015.7906%2052.0553%2016.188%2052.1776%2016.4256C52.2999%2016.6631%2052.5045%2016.783%2052.7914%2016.783C53.036%2016.783%2053.2712%2016.7078%2053.497%2016.5573C53.7228%2016.4067%2053.8874%2016.2162%2053.9979%2015.9858V6.03516H56.8154V18.5634Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M64.4755%203.68758H61.6768V18.5629H58.9181V3.68758H56.1194V1.42041H64.4755V3.68758Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M71.2768%2018.5634H69.0708L68.8262%2017.03H68.7651C68.1654%2018.1871%2067.267%2018.7656%2066.0675%2018.7656C65.2373%2018.7656%2064.6235%2018.4928%2064.2284%2017.9496C63.8333%2017.4039%2063.6357%2016.5526%2063.6357%2015.3955V6.03751H66.4556V15.2308C66.4556%2015.7906%2066.5167%2016.188%2066.639%2016.4256C66.7613%2016.6631%2066.9659%2016.783%2067.2529%2016.783C67.4974%2016.783%2067.7326%2016.7078%2067.9584%2016.5573C68.1842%2016.4067%2068.3488%2016.2162%2068.4593%2015.9858V6.03516H71.2768V18.5634Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M80.609%208.0387C80.4373%207.24849%2080.1621%206.67699%2079.7812%206.32186C79.4002%205.96674%2078.8757%205.79035%2078.2078%205.79035C77.6904%205.79035%2077.2059%205.93616%2076.7567%206.23014C76.3075%206.52412%2075.9594%206.90747%2075.7148%207.38489H75.6937V0.785645H72.9773V18.5608H75.3056L75.5925%2017.3755H75.6537C75.8724%2017.7988%2076.1993%2018.1304%2076.6344%2018.3774C77.0695%2018.622%2077.554%2018.7443%2078.0855%2018.7443C79.038%2018.7443%2079.7412%2018.3045%2080.1904%2017.4272C80.6396%2016.5476%2080.8653%2015.1765%2080.8653%2013.3092V11.3266C80.8653%209.92722%2080.7783%208.82892%2080.609%208.0387ZM78.0243%2013.1492C78.0243%2014.0617%2077.9867%2014.7767%2077.9114%2015.2941C77.8362%2015.8115%2077.7115%2016.1808%2077.5328%2016.3971C77.3564%2016.6158%2077.1165%2016.724%2076.8178%2016.724C76.585%2016.724%2076.371%2016.6699%2076.1734%2016.5594C75.9759%2016.4512%2075.816%2016.2866%2075.6937%2016.0702V8.96062C75.7877%208.6196%2075.9524%208.34209%2076.1852%208.12337C76.4157%207.90465%2076.6697%207.79646%2076.9401%207.79646C77.2271%207.79646%2077.4481%207.90935%2077.6034%208.13278C77.7609%208.35855%2077.8691%208.73485%2077.9303%209.26636C77.9914%209.79787%2078.022%2010.5528%2078.022%2011.5335V13.1492H78.0243Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M84.8657%2013.8712C84.8657%2014.6755%2084.8892%2015.2776%2084.9363%2015.6798C84.9833%2016.0819%2085.0821%2016.3736%2085.2326%2016.5594C85.3831%2016.7428%2085.6136%2016.8345%2085.9264%2016.8345C86.3474%2016.8345%2086.639%2016.6699%2086.7942%2016.343C86.9518%2016.0161%2087.0365%2015.4705%2087.0506%2014.7085L89.4824%2014.8519C89.4965%2014.9601%2089.5035%2015.1106%2089.5035%2015.3011C89.5035%2016.4582%2089.186%2017.3237%2088.5534%2017.8952C87.9208%2018.4667%2087.0247%2018.7536%2085.8676%2018.7536C84.4777%2018.7536%2083.504%2018.3185%2082.9466%2017.446C82.3869%2016.5735%2082.1094%2015.2259%2082.1094%2013.4008V11.2136C82.1094%209.33452%2082.3987%207.96105%2082.9772%207.09558C83.5558%206.2301%2084.5459%205.79736%2085.9499%205.79736C86.9165%205.79736%2087.6597%205.97375%2088.1771%206.32888C88.6945%206.684%2089.059%207.23433%2089.2707%207.98457C89.4824%208.7348%2089.5882%209.76961%2089.5882%2011.0913V13.2362H84.8657V13.8712ZM85.2232%207.96811C85.0797%208.14449%2084.9857%208.43377%2084.9363%208.83593C84.8892%209.2381%2084.8657%209.84722%2084.8657%2010.6657V11.5641H86.9283V10.6657C86.9283%209.86133%2086.9001%209.25221%2086.846%208.83593C86.7919%208.41966%2086.6931%208.12803%2086.5496%207.95635C86.4062%207.78702%2086.1851%207.7%2085.8864%207.7C85.5854%207.70235%2085.3643%207.79172%2085.2232%207.96811Z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%3C%2Fg%3E%0A%20%20%20%20%3C%2Fg%3E%0A%20%20%3C%2Fsvg%3E"
+              alt="YouTube Logo"
+              width="100px"
+            />
+          </div>
+        </div>
+        <div class="search">
+          <div class="search-bar">
+            <input type="text" placeholder="Cerca" />
+            <button class="search-btn">
+              <img
+                src="https://fonts.gstatic.com/s/i/youtube_outline/search/v9/24px.svg"
+                alt="Cerca Icon"
+              />
+            </button>
+            <div class="subtitle search-subtitle"><p>Cerca</p></div>
+          </div>
+          <div class="icon mic">
+            <img
+              src="https://fonts.gstatic.com/s/i/youtube_outline/mic/v8/24px.svg"
+              alt="Mic Logo"
+            />
+            <div class="subtitle mic-subtitle">
+              <p>Esegui una ricerca vocale</p>
+            </div>
+          </div>
+          <div class="vocal-model">
+            <div class="vocal-model-content">
+              <span class="icon close-vocal-model">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width=".6"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18 18 6M6 6l12 12"
+                  />
+                </svg>
+              </span>
+              <h3>Esegui una ricerca vocale</h3>
+              <p>
+                Per eseguire una ricerca vocale, vai sulle impostazioni del
+                browser e consenti l'accesso al microfono
+              </p>
+              <span class="vocal-model-mic">
+                <img
+                  src="https://fonts.gstatic.com/s/i/youtube_outline/mic/v8/24px.svg"
+                  alt="Mic Logo"
+              /></span>
+            </div>
+          </div>
+        </div>
+        <div class="user-tools">
+          <div class="icon create">
+            <img
+              src="https://fonts.gstatic.com/s/i/youtube_outline/video_camera_add/v1/24px.svg"
+              alt="Crea Icon"
+            />
+            <div class="subtitle create-subtitle"><p>Crea</p></div>
+            <div class="create-window">
+              <ul class="create-window-content">
+                <li>
+                  <img
+                    src="https://fonts.gstatic.com/s/i/youtube_outline/my_videos/v6/24px.svg"
+                  />
+                  <p>Carica video</p>
+                </li>
+                <li>
+                  <img
+                    src="https://fonts.gstatic.com/s/i/youtube_outline/radar_live/v6/24px.svg"
+                  />
+                  <p>Trasmetti dal vivo</p>
+                </li>
+                <li>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="size-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10"
+                    />
+                  </svg>
+
+                  <p>Crea post</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="icon notification">
+            <img
+              src="https://fonts.gstatic.com/s/i/youtube_outline/bell/v8/24px.svg"
+              alt="Notifiche Icon"
+            />
+            <div class="subtitle notification-subtitle"><p>Notifiche</p></div>
+          </div>
+          <div class="user-name">
+            <p>A</p>
+          </div>
+        </div>
+      </div>
+      <div class="categories-bar">
+        <div class="categories">
+          <div class="arrow left-arrow">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width=".8"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M15.75 19.5 8.25 12l7.5-7.5"
+              />
+            </svg>
+          </div>
+          <ul class="categories-list">
+            <li class="categories-item active">Tutti</li>
+            <li class="categories-item">Musica</li>
+            <li class="categories-item">Mix</li>
+            <li class="categories-item">Giochi</li>
+            <li class="categories-item">Live</li>
+            <li class="categories-item">Calcio</li>
+            <li class="categories-item">Rap</li>
+            <li class="categories-item">Caricamenti recenti</li>
+            <li class="categories-item">Guardati</li>
+            <li class="categories-item">Novità per te</li>
+          </ul>
+          <div class="arrow right-arrow active">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width=".8"
+              stroke="currentColor"
+              class="size-6"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </header>
+    <aside>
+      <div class="menu">
+        <ul class="menu-list">
+          <li class="menu-item home">
+            <img
+              src="https://fonts.gstatic.com/s/i/youtube_fill/home/v7/24px.svg"
+              alt="Home Icon"
+            />
+            <p>Home</p>
+          </li>
+          <li class="menu-item shorts">
+            <img
+              src="https://fonts.gstatic.com/s/i/youtube_outline/youtube_shorts/v8/24px.svg"
+              alt="Shorts Icon"
+            />
+            <p>Shorts</p>
+          </li>
+          <li class="menu-item iscrizioni">
+            <img
+              src="https://fonts.gstatic.com/s/i/youtube_outline/subscriptions/v7/24px.svg"
+              alt="Iscrizioni Icon"
+            />
+            <p>Iscrizioni</p>
+          </li>
+          <li class="menu-item tu">
+            <img
+              src="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20enable-background%3D%22new%200%200%2024%2024%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20width%3D%2224%22%20focusable%3D%22false%22%20style%3D%22pointer-events%3A%20none%3B%20display%3A%20inherit%3B%20width%3A%20100%25%3B%20height%3A%20100%25%3B%22%20aria-hidden%3D%22true%22%3E%3Cpath%20d%3D%22m11%207%206%203.5-6%203.5V7zm7%2013H4V6H3v15h15v-1zm3-2H6V3h15v15zM7%2017h13V4H7v13z%22%3E%3C%2Fpath%3E%3C%2Fsvg%3E"
+              alt="Tu Icon"
+            />
+            <p>Tu</p>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <main>
+      <div class="video-container"></div>
+    </main>
+  </body>
+</html>
